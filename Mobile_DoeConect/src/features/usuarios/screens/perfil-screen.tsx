@@ -164,6 +164,11 @@ export default function PerfilScreen() {
       <ThemedView style={styles.badge}>
         <ThemedText style={styles.badgeText}>{usuario.nivelAcesso ?? usuario.role}</ThemedText>
       </ThemedView>
+      {usuario.dataCadastro && (
+        <ThemedText style={styles.dataCadastro}>
+          Membro desde {new Date(usuario.dataCadastro).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+        </ThemedText>
+      )}
 
       {error && (
         <View style={styles.errorBox}>
@@ -330,6 +335,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   badgeText: { color: '#fff', fontSize: 12, fontWeight: '600' },
+  dataCadastro: { fontSize: 12, opacity: 0.5, marginTop: 2 },
   form: { width: '100%', gap: 4, marginTop: 16 },
   label: { fontSize: 13, fontWeight: '600', opacity: 0.7, marginBottom: 2 },
   input: {

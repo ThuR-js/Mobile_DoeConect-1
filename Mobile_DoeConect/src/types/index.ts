@@ -7,6 +7,7 @@ export type Usuario = {
   nivelAcesso?: string;
   foto?: string;
   regiao?: string;
+  dataCadastro?: string;
 };
 
 export type UsuarioPerfil = {
